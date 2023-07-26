@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="~/Content/style.css" />
+    <meta name="viewport" content="width=+, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <header id="header-bar">
+        <div class="header-top container">
+            <img class="quochuyimg"
+                 src="https://tracuutenmien.gov.vn/themes/img/quoc-huy.svg"
+                 alt="quoc-huy" />
+            <div class="hero-title">
+                <h2 class="hero-title1">BỘ THÔNG TIN VÀ TRUYỀN THÔNG</h2>
+                <h4 class="hero-title2">
+                    MINISTRY OF INFORMATION AND COMMUNICATIONS
+                </h4>
+            </div>
+        </div>
+        <div class="header-search">
+            <h1 class="header-search__title">
+                HỆ THỐNG THÔNG TIN TRA CỨU TÊN MIỀN
+            </h1>
+
+            <form class="header-search__search-bar"
+                  method="post" action="@Url.Action("Index", "Home")">
+                <div class="input-group">
+                    <!-- icon search -->
+                    <input class="form-control"
+                           type="text"
+                           placeholder="Vui lòng nhập tên miền" />
+                    <button id="submit-domain">
+                        Tìm kiếm
+                    </button>
+                </div>
+            </form>
+        </div>
+    </header>
+
+   
+    @RenderBody()
+</body>
+</html>
+

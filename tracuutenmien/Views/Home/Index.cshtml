@@ -1,0 +1,148 @@
+﻿<style>
+    .table_container {
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-top: 30px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 30px;
+        background-color: white;
+    }
+
+    .tableinf {
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 16px;
+        border-bottom: 1px solid gray;
+        font-weight: normal;
+        font-size: 18px;
+    }
+
+    .card_body {
+        padding: 10px;
+    }
+
+    .tableinf_firstHead {
+        padding: 20px;
+        border: none;
+    }
+
+    .tableinf_firsttitle {
+        color: darkblue;
+        font-weight: 400;
+        font-size: 25px;
+        border: none;
+    }
+
+    .tableinf_secondHead {
+        border: none;
+    }
+
+    .tableinf_secondTitle {
+        border: none;
+        color: orange;
+        font-size: 18px;
+    }
+</style>
+
+
+
+@if (ViewBag.Response != null)
+{
+    if (@ViewBag.Status == "Tên miền quốc gia .VN")
+    {
+        <div class="table_container">
+            <div class="card_header">
+                <h3 class="tableinf_firsttitle">Thông tin tra cứu</h3>
+            </div>
+            <div class="card_body">
+                <table class="tableinf">
+                    <thead>
+                        <tr class="tableinf_secondHead">
+                            <th class="tableinf_secondTitle">@ViewBag.Response</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Loại tên miền</th>
+                            <td>@ViewBag.Status</td>
+                        </tr>
+                        <tr>
+                            <th>Chủ thể đăng ký</th>
+                            <td>@ViewBag.Owner</td>
+                        </tr>
+                        <tr>
+                            <th>Nhà đăng ký quản lý</th>
+                            <td>@ViewBag.Manager</td>
+                        </tr>
+                        <tr>
+                            <th>Ngày đăng ký</th>
+                            <td>@ViewBag.RegisterDay</td>
+                        </tr>
+                        <tr>
+                            <th>Ngày hết hạn</th>
+                            <td>@ViewBag.EndDay</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    }
+    else
+       if (ViewBag.Response == "API request failed. Error: An error occurred while sending the request.")
+    {
+        <div class="table_container">
+            <div class="card_header">
+                <h3 class="tableinf_firsttitle">Thông tin tra cứu</h3>
+            </div>
+            <div class="card_body">
+                <table class="tableinf">
+                    <thead>
+                        <tr class="tableinf_secondHead">
+                            <th class="tableinf_secondTitle">@ViewBag.Response</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="table_container">
+            <div class="card_header">
+                <h3 class="tableinf_firsttitle">Thông tin tra cứu</h3>
+            </div>
+            <div class="card_body">
+                <table class="tableinf">
+                    <thead>
+                        <tr class="tableinf_secondHead">
+                            <th class="tableinf_secondTitle">@ViewBag.Response</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Loại tên miền</th>
+                            <td>@ViewBag.Status</td>
+                        </tr>
+                        <tr>
+                            <th>Trạng thái</th>
+                            <td>@ViewBag.Owner</td>
+                        </tr>
+                        <tr>
+                            <th>Thông tin chi tiết</th>
+                            <td>Tra cứu thông tin trên cổng WHOIS/RDAP</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+
+}
+
+<p>@ViewBag.Test</p>
